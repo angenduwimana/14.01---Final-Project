@@ -1,8 +1,124 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+:root {
+  --green: #10291d;
+  --gold: #f7c64a;
+  --cream: #f7f7f7;
+  --gray: #7c6d4a;
 }
 
-a {
-  color: #00B7FF;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Montserrat, Arial, sans-serif;
+  background: var(--cream);
+  color: var(--green);
+}
+
+.site-header,
+.site-footer {
+  background: var(--green);
+  color: var(--cream);
+  padding: 1rem;
+}
+
+.site-title {
+  margin: 0;
+  font-family: Italianno, cursive;
+  font-size: 3rem;
+}
+
+.site-tagline {
+  margin: 0.25rem 0 0;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.site-nav a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.site-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.hero,
+.page-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.button,
+button {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--green);
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--gray);
+  border-radius: 8px;
+  font: inherit;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.comments-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.comment-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.error-message {
+  color: #a40000;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .menu-list li {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
 }

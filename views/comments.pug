@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  section.page-section
+    h2 Customer Comments
+    if error
+      p.error-message= error
+
+    form(action="/comments" method="POST")
+      label(for="name") Name
+      input#name(type="text" name="name" maxlength="50" required)
+
+      label(for="comment") Comment
+      textarea#comment(name="comment" rows="5" maxlength="500" required)
+
+      button(type="submit") Submit Comment
+
+    if comments.length
+      .comments-list
+        each comment in comments
+          article.comment-card
+            h3= comment.name
+            p= comment.comment
+            small= comment.created_at
+    else
+      p No comments yet.
+

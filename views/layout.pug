@@ -1,7 +1,22 @@
 doctype html
-html
+html(lang="en")
   head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="stylesheet", href="/stylesheets/style.css")
   body
-    block content
+    header.site-header
+      .brand-wrap
+        h1.site-title Downtown Donuts
+        p.site-tagline Since 1992
+      nav.site-nav
+        a(href="/") Home
+        a(href="/menu") Menu
+        a(href="/about") About Us
+        a(href="/comments") Comments
+    main.site-main
+      block content
+    footer.site-footer
+      p © Downtown Donuts
+
