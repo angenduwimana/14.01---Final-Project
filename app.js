@@ -17,4 +17,13 @@ app.use(function (req, res, next) {
   res.status(404).render('error', { message: 'Page not found', error: {} });
 });
 
+app.use(function (err, req, res, next) {
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message || 'Server error',
+    error: {}
+  });
+});
+
 module.exports = app;
+
